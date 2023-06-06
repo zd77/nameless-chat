@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:nameless_chat/common/routes/routes.dart';
 import 'package:nameless_chat/pages/frame/welcome/index.dart';
 
 class WelcomeController extends GetxController {
@@ -9,6 +10,6 @@ class WelcomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    print('Welcome controller');
+    Future.delayed( const Duration( seconds: 3 ), () => Get.offAllNamed(AppRoutes.message));
   }
 }

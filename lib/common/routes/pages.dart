@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 
+import 'package:nameless_chat/common/middlewares/middlewares.dart';
 import 'package:nameless_chat/common/routes/routes.dart';
+import 'package:nameless_chat/pages/frame/message/index.dart';
 import 'package:nameless_chat/pages/frame/welcome/index.dart';
 
 class AppPages {
@@ -9,8 +11,14 @@ class AppPages {
   static final List<GetPage> routes = [
     GetPage(
       name: AppRoutes.initial, 
-      page: () => const WelcomePage(),
       binding: WelcomeBinding(),
+      page: () => const WelcomePage(),
     ),
+    GetPage(
+      name: AppRoutes.message,
+      binding: MessageBinding(),
+      page: () => const MessagePage(),
+      middlewares: [ RouteAuthMiddleware(priority: 1) ]
+    )
   ];
 }

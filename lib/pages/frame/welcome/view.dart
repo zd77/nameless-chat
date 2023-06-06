@@ -15,6 +15,7 @@ class WelcomePage extends GetView<WelcomeController> {
         title,
         textAlign: TextAlign.center,
         style: TextStyle(
+          color: Colors.white,
           fontFamily: 'Montserrat',
           fontWeight: FontWeight.bold,
           fontSize: 45.sp
